@@ -1,0 +1,12 @@
+D:\route\C#\ITI_Traning\DAL\bin\Debug\net5.0\DAL.deps.json
+D:\route\C#\ITI_Traning\DAL\bin\Debug\net5.0\DAL.dll
+D:\route\C#\ITI_Traning\DAL\bin\Debug\net5.0\DAL.pdb
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.csproj.AssemblyReference.cache
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.AssemblyInfoInputs.cache
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.AssemblyInfo.cs
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.csproj.CoreCompileInputs.cache
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.dll
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\refint\DAL.dll
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\DAL.pdb
+D:\route\C#\ITI_Traning\DAL\obj\Debug\net5.0\ref\DAL.dll

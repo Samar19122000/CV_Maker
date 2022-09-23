@@ -1,0 +1,248 @@
+﻿@model SamarApp.Models.SliderViewModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="~/src/assets/apple-icon-180x180.png">
+  <link href="~/src/assets/favicon.ico" rel="icon">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Admin/assets/css/pdf.css" />
+   
+  <title>Reseme</title>  
+
+
+<link href="~/src/style/main.d8e0d294.css" rel="stylesheet"></head>
+
+<body class="" id = "invoice">
+
+
+    @RenderBody()
+    
+ <div class="background-color-layer" style="background-image: url('~/src/assets/images/img-01.jpg')"></div>
+   <main class="content-wrapper">
+  <header class="white-text-container section-container">
+     
+      
+      <!-- Add your content Slider -->
+
+        @foreach (var itemSlider in Model.slider)
+   {    
+
+    <div class="text-center">
+      <h1>@itemSlider.Name</h1>
+      <h3>@itemSlider.JobName</h3>
+      <p>
+        <a class="fa-icon fa-icon-2x" href="@itemSlider.FacebookLink" title="">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a class="fa-icon fa-icon-2x" href="@itemSlider.TwitterLink" title="">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a class="fa-icon fa-icon-2x" href="@itemSlider.LinkedInLink" title="">
+          <i class="fa fa-dribbble"></i>
+        </a>
+        <a class="fa-icon fa-icon-2x" href="@itemSlider.GetHubLink" title="">
+          <i class="fa fa-linkedin"></i>
+        </a>
+      </p>
+       </div>
+   }
+ 
+  </header>
+
+ <div class="container">
+   <div class="row">
+     <div class="col-xs-12">
+
+
+
+
+         <!-- About  -->
+        <div class="card">
+          <div class="card-block">
+            <h2>About me</h2>
+            @foreach (var item in Model.abouteme)
+            {
+            <div class="row">
+              <div class="col-md-4">
+              <p>
+                  <img src="@string.Format("/AboutApload/{0}" , item.Image)" class="img-responsive" alt="">
+               </p>
+              </div>
+              <div class="col-md-8">
+               <h3>Hello I am @item.Name </h3>
+              <p>
+                @item.Description
+              </p>
+              <br />
+              <ul class = "left" style = "list-style-type:none;">
+               <li ><span><b>Name : </b></span> @item.Name</li>
+               <li><span><b>Date of birth : </b></span> @item.DateOfBirth</li> 
+               <li><span><b>Nationality : </b> </span> @item.Nationality</li>
+               <li><span><b>Work Status :</b></span> @item.WorkStatus</li>
+             </ul>
+             <ul class = "right" style = "list-style-type:none;">
+               <li ><span><b>Phone : </b></span> @item.Phone</li> 
+               <li ><span><b>Email : </b></span> @item.Email</li>
+               <li  ><span><b>Address : </b></span> @item.Address</li>   
+               <li ><span><b>Freelancer : </b></span> @item.Freelancer</li>
+            </ul>       
+            </div>
+            </div>
+            }
+          </div>
+           </div>
+     
+
+
+
+      <!-- work-experience-->
+
+        <div class="card">
+          <div class="card-block">
+            <h2>My Works</h2>
+            @foreach (var item in Model.work)
+            {
+            <div class="work-experience">
+              <small class="date">@item.StartDate  -  @item.EndDate</small>
+              <h3 class="h5 date-title">@item.JobName - <a href="http://en.orson.io" title="Create professionnal website">@item.CompanyName</a></h3>
+              <p>
+                  @item.Description
+              </p>
+            </div>
+            }
+          </div>
+        </div>
+        
+
+
+
+        <!--Education -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Education</h2>
+            <div class="row">
+                  @foreach (var item in Model.tbEducation)
+                 {
+                   <div class="col-md-4">
+                  <div class="education-experience">
+                  <small class="date">@item.QualiDate - @item.QualiEndDate</small>
+                  <h3 class="h5 date-title">@item.Qualification</h3>
+                  <p>@item.AcademyName</p>
+                  </div>
+                  </div>             
+                 }
+          </div>
+        </div>
+         </div>
+
+
+
+        <!-- Language -->
+        <div class="card">
+          <div class="card-block">
+            <h2>Language</h2>
+            <div class="row">
+                @foreach (var item in Model.tbLanguage)
+               {
+                <div class="col-md-4">
+                <div class="language-experience">
+                  <h3 class="h5">@item.LangaugeName <small>@item.Level</small></h3>
+                </div>
+               </div>  
+               }
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+    
+
+        <!-- Projects-->
+        <div class="card">
+          <div class="card-block">
+            <h2>Projects</h2>
+            <div class="row">
+                @foreach (var item in Model.tbProjects)
+               {
+                   <div class="col-md-4">
+                  <img src="@string.Format("/ProjectUploads/{0}" , item.PImage)" class="img-responsive" alt="">  
+                   <h3 class="h5">@item.Pname</h3>
+                   <p>@item.Pdate</p>
+                   </div>   
+               }  
+            </div>
+          </div>
+        </div>
+
+
+
+
+     </div>
+   </div>
+ </div>
+</main>
+<footer class="footer-container white-text-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <div class="col-md-12 text-right mb-3">
+                <button class="btn btn-primary" id="download"> download pdf</button>
+            </div>
+        <p><img src="~/src/assets/images/mashup-icon.svg" alt=""></p>
+        
+        <p>©All right reserved. Design <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        <p>
+          <a class="fa-icon fa-icon-2x" href="https://facebook.com/" title="">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://twitter.com/" title="">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://dribbble.com/" title="">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/" title="">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a class="fa-icon fa-icon-2x" href="https://vimeo.com/" title="">
+            <i class="fa fa-vimeo"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     scrollRevelation('.card');
+  });
+
+</script>
+<script type="text/javascript" src="~/src/script/main.bc58148c.js"></script></body>
+ <script src="~/Admin/assets/js/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+</html>
+
+
+        
+
+
+
+
+

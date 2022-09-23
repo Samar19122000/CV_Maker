@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SamarApp.Models.TbEducation>
+
+           <div  class="col-lg-12 stretch-card"   >
+             <div class="card">
+               <div class="card-body">
+                  <h4 class="card-title">Data Table</h4>
+                      <p class="card-description">
+                      <a  asp-controller = "Education"  asp-action = "Edit" class = "btn btn-success" >Add Your Education</a>
+                      </p>                 
+                        <div class="row">
+                       <div class="table-responsive">
+                      <table class="table table-bordered" > 
+                      <thead>
+                        <tr>
+                          <th>Qualification</th>
+                          <th>Academy Name</th>
+                          <th>Start Date</th>
+                          <th>End Date</th>
+                       
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                          @if(Model == null){ 
+                        <span>no items found</span>
+                           } 
+                            else{  
+                    @foreach(var col in Model)
+                    {
+                        <tr class="table-info">
+                          <td>@Html.DisplayFor(S => @col.Qualification)</td>
+                          <td> @Html.DisplayFor(S => @col.AcademyName)</td>
+                          <td>@Html.DisplayFor(S => @col.QualiDate)</td>
+                          <td>@Html.DisplayFor(S => @col.QualiEndDate)</td>
+                          <td>
+                              <a asp-controller = "Education" asp-action = "Edit" asp-route-Id = "@col.Id" class = "btn btn-info">Update</a>
+                              <a  asp-controller = "Education" asp-action = "Delete" asp-route-Id = "@col.Id" class = "btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                         
+                    }
+                    }            
+                      </tbody>
+                    </table>
+                     </div>
+                     </div>
+                     </div>
+                 </div>
+                 </div>
+                    

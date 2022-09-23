@@ -1,0 +1,53 @@
+﻿
+  @model IEnumerable<SamarApp.Models.TbSlider>
+           <div  class="col-lg-12 stretch-card"   >
+             <div class="card">
+               <div class="card-body">
+                  <h4 class="card-title">Data Table</h4>
+                      <p class="card-description">
+                      <a  asp-controller = "Slider"  asp-action = "Edit" class = "btn btn-success" >Create Personal Page</a>
+                      </p>  
+                       <div class="row">
+                       <div class="table-responsive">
+                    <table class="table table-bordered" > 
+                      <thead>
+                        <tr>
+                          <th>@Html.DisplayNameFor(D => D.Name)</th>
+                          <th>@Html.DisplayNameFor(D => D.JobName)</th>
+                          <th>@Html.DisplayNameFor(D => D.FacebookLink)</th>
+                          <th>@Html.DisplayNameFor(D => D.TwitterLink)</th>
+                          <th>@Html.DisplayNameFor(D => D.LinkedInLink)</th>
+                          <th>@Html.DisplayNameFor(D => D.GetHubLink)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                          @if(Model == null){ 
+                        <span>no items found</span>
+                           } 
+                            else{  
+                    @foreach(var col in Model)
+                    {
+                        <tr class="table-info">
+                          <td>@Html.DisplayFor(S => @col.Name)</td>
+                          <td> @Html.DisplayFor(S => @col.JobName)</td>
+                          <td>@Html.DisplayFor(S => @col.FacebookLink)</td>
+                          <td>@Html.DisplayFor(S => @col.TwitterLink)</td>
+                          <td>@Html.DisplayFor(S => @col.LinkedInLink)</td>
+                          <td> @Html.DisplayFor(S => @col.GetHubLink)</td>
+                          <td>
+                              <a asp-controller = "Slider" asp-action = "Edit" asp-route-Id = "@col.Id" class = "btn btn-info">Update</a>
+                              <a  asp-controller = "Slider" asp-action = "Delete" asp-route-Id = "@col.Id" class = "btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                         
+                    }
+                    }            
+                      </tbody>
+                    </table>
+                     </div>
+                     </div>
+                     </div>
+                 </div>
+                 </div>
+                    

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SamarApp.Models.TbAbouteme>
+
+     <div  class="col-lg-12 stretch-card"   >
+       <div class="card">
+         <div class="card-body">
+           <h4 class="card-title">Data Table</h4>
+             <p class="card-description">
+              <a  asp-controller = "About"  asp-action = "Edit" class = "btn btn-success" >Create Personal Page</a>
+               </p>                  
+                  <div class="row">
+                 <div class="table-responsive">
+               <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>@Html.DisplayNameFor(D => D.Name)</th>
+                          <th>@Html.DisplayNameFor(D => D.DateOfBirth)</th>
+                          <th>@Html.DisplayNameFor(D => D.Nationality)</th>
+                          <th>@Html.DisplayNameFor(D => D.WorkStatus)</th>
+                          <th>@Html.DisplayNameFor(D => D.Phone)</th>
+                          <th>@Html.DisplayNameFor(D => D.Email)</th>
+                          <th>@Html.DisplayNameFor(D => D.Address)</th>
+                          <th>@Html.DisplayNameFor(D => D.Freelancer)</th>
+                          <th>@Html.DisplayNameFor(D => D.Description)</th>
+                          <th>@Html.DisplayNameFor(D => D.Image)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @foreach (var about in Model)
+                         {
+                           <tr class="table-info">
+                          <td>@Html.DisplayFor(S => @about.Name)</td>
+                          <td>@Html.DisplayFor(S => @about.DateOfBirth)</td>
+                          <td>@Html.DisplayFor(S => @about.Nationality)</td>
+                          <td>@Html.DisplayFor(S => @about.WorkStatus)</td>
+                          <td>@Html.DisplayFor(S => @about.Phone)</td>
+                          <td>@Html.DisplayFor(S => @about.Email)</td>
+                          <td>@Html.DisplayFor(S => @about.Address)</td>
+                          <td>@Html.DisplayFor(S => @about.Freelancer)</td>
+                           <td>@Html.DisplayFor(S => @about.Description)</td>
+                          <td>@Html.DisplayFor(S => @about.Image)</td>
+                          <td>
+                              <img src = "@string.Format("/AboutApload/{0}" , about.Image)" class="img-responsive" alt = ""/>
+                          </td>
+                          <td>
+                              <a asp-controller = "About" asp-action = "Edit" asp-route-Id = "@about.Id" class = "btn btn-info">Update</a>
+                              <a  asp-controller = "About" asp-action = "Delete" asp-route-Id = "@about.Id" class = "btn btn-danger">Delete</a>
+                          </td>
+                        </tr>  
+                         } 
+
+                        
+                      </tbody>
+                    </table>
+                     </div>
+                     </div>
+                     </div>
+                     </div>
+                     </div>
+                    
+                           
+

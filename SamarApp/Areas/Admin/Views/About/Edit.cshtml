@@ -1,0 +1,116 @@
+﻿
+   
+@model TbAbouteme 
+
+<div class="container p-5 ">         
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+            </div>
+
+            <!-- Our Form -->
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Horizontal Form</h4>
+                    <form class="forms-sample"  enctype = "multipart/form-data"  method ="post" role = "form" asp-controller = "About" asp-action = "Save">
+                      
+                         <div asp-validation-summary = "All"></div>
+                        <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "Name" type="text" class="form-control" placeholder="User name">
+                           <span asp-validation-for = "Name" class = "text-danger"></span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Date Of Birth</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "DateOfBirth" type="date" class="form-control"  placeholder="Your Date Of Birth">
+                           <span asp-validation-for = "DateOfBirth" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label  class="col-sm-3 col-form-label">Nationality</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "Nationality" type="text" class="form-control"  placeholder="Your Nationality">
+                           <span asp-validation-for = "Nationality" class = "text-danger"></span>
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Work Status</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "WorkStatus" type="text" class="form-control" placeholder="Your Work Status">
+                           <span asp-validation-for = "WorkStatus" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Phone</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "Phone" type="text" class="form-control"  placeholder="Your Phone">
+                           <span asp-validation-for = "Phone" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input  asp-for = "Email" type="text" class="form-control" placeholder="Your Email">
+                           <span asp-validation-for = "Email" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                       <div class="form-group row">
+                        <label  class="col-sm-3 col-form-label">Address</label>
+                        <div class="col-sm-9">
+                          <input  asp-for = "Address" type="text" class="form-control" placeholder="Your Address">
+                           <span asp-validation-for = "Address" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                       <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Freelancer</label>
+                        <div class="col-sm-9">
+                          <input  asp-for = "Freelancer" type="text" class="form-control" placeholder="Your Freelancer">
+                           <span asp-validation-for = "Freelancer" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                       <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                          <input  asp-for = "Description" type="text" class="form-control"  placeholder="Your Description">
+                           <span asp-validation-for = "Description" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                       <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Image</label>
+                        <div class="col-sm-9">
+                          <input  type="file" name = "Files" class="form-control" placeholder="Your Image">
+                        </div>
+                      </div>
+                        <div class="form-group row"> 
+                        <label class="col-sm-3 col-form-label"></label>               
+                        <div class="col-sm-9">
+                          <input  type = "hidden" asp-for = "Id"  class="form-control">
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-gradient-primary me-2">Save</button>
+                      <button type="submit" class="btn btn-gradient-dark" asp-controller = "About" asp-action = "AboutInfo">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+              
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+
+  

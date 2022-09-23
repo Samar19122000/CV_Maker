@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SamarApp.Models.TbLanguage>
+
+           <div  class="col-lg-12 stretch-card"   >
+             <div class="card">
+               <div class="card-body">
+                  <h4 class="card-title">Data Table</h4>
+                      <p class="card-description">
+                      <a  asp-controller = "Language"  asp-action = "Edit" class = "btn btn-success" >Add Your Languages </a>
+                      </p>  
+                       <div class="row">
+                       <div class="table-responsive">
+                    <table class="table table-bordered" > 
+                      <thead>
+                        <tr>
+                          <th>Langauge Name</th>
+                          <th> Your Level</th>
+                      
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                          @if(Model == null){ 
+                        <span>no items found</span>
+                           } 
+                            else{  
+                    @foreach(var col in Model)
+                    {
+                        <tr class="table-info">
+                          <td>@Html.DisplayFor(S => @col.LangaugeName)</td>
+                          <td> @Html.DisplayFor(S => @col.Level)</td>
+                          <td>
+                              <a asp-controller = "Language" asp-action = "Edit" asp-route-Id = "@col.Id" class = "btn btn-info">Update</a>
+                              <a  asp-controller = "Language" asp-action = "Delete" asp-route-Id = "@col.Id" class = "btn btn-danger">Delete</a>
+                          </td>
+                        </tr>       
+                    }
+                    }            
+                      </tbody>
+                    </table>
+                     </div>
+                     </div>
+                     </div>
+                 
+                    

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SamarApp.Models.TbProject>
+           <div  class="col-lg-12 stretch-card"   >
+             <div class="card">
+               <div class="card-body">
+                  <h4 class="card-title">Data Table</h4>
+                      <p class="card-description">
+                      <a  asp-controller = "Project"  asp-action = "Edit" class = "btn btn-success" >Create Personal Page</a>
+                      </p>            
+                      <div class="row">
+                       <div class="table-responsive">
+                    <table class="table table-bordered" > 
+                      <thead>
+                        <tr>
+                          <th>Project Name</th>
+                          <th>Project Year Date </th>
+                          <th>Project Image </th>
+                           
+                        </tr>
+                      </thead>
+                      <tbody>
+                          @if(Model == null){ 
+                        <span>no items found</span>
+                           } 
+                            else{  
+                    @foreach(var col in Model)
+                    {
+                        <tr class="table-info">
+                          <td>@Html.DisplayFor(S => @col.Pname)</td>
+                          <td>@Html.DisplayFor(S => @col.Pdate)</td>
+                          <td>
+                              <img src = "@string.Format("/ProjectUploads/{0}" , col.PImage)"  class="img-responsive" width = "20" height = "15"/>
+                          </td>
+                          <td>
+                              <a  asp-controller = "Project" asp-action = "Edit" asp-route-Id = "@col.Id" class = "btn btn-info">Update</a>
+                              <a  asp-controller = "Project" asp-action = "Delete" asp-route-Id = "@col.Id" class = "btn btn-danger">Delete</a>
+                          </td>
+                        </tr>                 
+                    }
+                    }            
+                    </tbody>
+                    </table>
+                     </div>
+                     </div>
+                     </div>
+                    </div>
+                    </div>
+                    

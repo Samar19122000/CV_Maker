@@ -1,0 +1,25 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Athunt.cshtml";
+}
+<div>
+<div class = "form-group">
+        <label class = "col-form-label" asp-for = "UserName"></label>
+        <input  class = " form-control" asp-for = "UserName" readonly/>
+    </div>
+
+     <div class = "form-group">
+        <label class = "col-form-label" asp-for = "Email"></label>
+        <input  class = " form-control" asp-for = "Email"readonly/>
+    </div>
+
+     <div class = "form-group">
+        <label class = "col-form-label" asp-for = "PhoneNumber"></label>
+        <input  class = " form-control" asp-for = "PhoneNumber"readonly/>
+    </div>
+     <a asp-controller = "Admins" asp-action = "Index" class="btn btn-gradient-primary me-2" >Back To List</a>
+</div>
+
+    
+

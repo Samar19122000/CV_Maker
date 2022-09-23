@@ -1,0 +1,75 @@
+﻿
+   
+@model TbWork 
+
+<div class="container p-5 ">         
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+            </div>
+
+            <!-- Our Form -->
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Horizontal Form</h4>
+                    <form class="forms-sample" method ="post" role = "form" asp-controller = "Work" asp-action = "Save">
+                     <div asp-validation-summary = "All"></div>
+                      <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Job Name</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "JobName" type="text" class="form-control" placeholder="Job Name">
+                          <span asp-validation-for = "JobName" class = "text-danger"></span>  
+                      </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Company Name</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "CompanyName" type="text" class="form-control" placeholder="Company Name">
+                          <span asp-validation-for = "CompanyName" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "Description" type="text" class="form-control" placeholder="Your Position Description">
+                          <span asp-validation-for = "Description" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Start Date</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "StartDate" type="date" class="form-control" placeholder="Start Date">
+                          <span asp-validation-for = "StartDate" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">End Date</label>
+                        <div class="col-sm-9">
+                          <input  asp-for = "EndDate" type="date" class="form-control" placeholder="End Date">
+                          <span asp-validation-for = "EndDate" class = "text-danger"></span>   
+                      </div>
+                      </div>
+                        <div class="form-group row">                
+                        <div class="col-sm-9">
+                          <input  type = "hidden" asp-for = "Id"  class="form-control">
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-gradient-primary me-2">Save</button>
+                      <button class="btn btn-gradient-dark" asp-controller = "Work" asp-action = "MyWork">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+
+  

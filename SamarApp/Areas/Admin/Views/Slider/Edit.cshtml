@@ -1,0 +1,87 @@
+﻿  
+@model TbSlider 
+
+<div class="container p-5 ">         
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title"> Form elements </h3>
+            </div>
+
+            <!-- Our Form -->
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Horizontal Form</h4>
+                    <form class="forms-sample" method ="post" role = "form" asp-controller = "Slider" asp-action = "Save">
+                      
+                         <div asp-validation-summary = "All"></div>
+                        <div class="form-group row">
+                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "Name" type="text" class="form-control"  placeholder="User name">
+                           <span asp-validation-for = "Name" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Job Name</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "JobName" type="text" class="form-control"  placeholder="Job Name">
+                          <span asp-validation-for = "Name" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Facebook Link</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "FacebookLink" type="text" class="form-control" placeholder="Youer Facebook Link">
+                           <span asp-validation-for = "FacebookLink" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Twitter Link</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "TwitterLink" type="text" class="form-control"  placeholder="Youer Twitter Link">
+                           <span asp-validation-for = "TwitterLink" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">LinkedIn Link</label>
+                        <div class="col-sm-9">
+                          <input asp-for = "LinkedInLink" type="text" class="form-control" placeholder="Your LinkedIn Link">
+                           <span asp-validation-for = "LinkedInLink" class = "text-danger"></span> 
+                      </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">GetHub Link</label>
+                        <div class="col-sm-9">
+                          <input  asp-for = "GetHubLink" type="text" class="form-control"  placeholder="Your GetHub Link">
+                          <span asp-validation-for = "GetHubLink" class = "text-danger"></span>  
+                      </div>
+                      </div>
+                        <div class="form-group row">                
+                        <div class="col-sm-9">
+                          <input  type = "hidden" asp-for = "Id"  class="form-control">
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-gradient-primary me-2">Save</button>
+                      <button class="btn btn-gradient-dark" asp-controller = "Slider" asp-action = "MySlider">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+              
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+
+
+  
